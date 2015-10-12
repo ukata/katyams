@@ -28,9 +28,29 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
-.logo-text {
-background-color: ff3333
+
+body {
+  font-family: 'Courier New', sans-serif;
 }
+
+.logo-text {
+background-color: #ff3333;
+};
+
+a:visited.logo-text {
+color: #000;
+}
+
+a.logo-text {
+color: #000;
+}
+
+a:hover.logo-text {
+color: #000;
+text-decoration: none;
+}
+
+  
 
 
 </style>
@@ -46,7 +66,7 @@ background-color: ff3333
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><span class="logo-text">ukata.me</span></h1>
+                <h1 class="page-header"><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
             </div>
         </div>
 {% block kms_body %}       
