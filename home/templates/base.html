@@ -1,0 +1,123 @@
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=1 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Katia">
+
+    <title>ukata.me</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="assets/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <!--<link href="assets/css/thumbnail-gallery.css" rel="stylesheet">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+{% block kms_head_custom_css %}
+{% endblock kms_head_custom_css %}
+
+</head>
+
+<body class="">
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">ukata.me</h1>
+            </div>
+        </div>
+{% block kms_body %}       
+{% endblock kms_body %}
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Katia 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <!--<script src="assets/js/jquery-1.11.3.min.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="assets/js/bootstrap.min.js"></script>-->
+{% block kms_body_custom_js %}
+    <script>
+        function preload(arrayOfImages, index) {
+    index = index || 0;
+
+    if (arrayOfImages && arrayOfImages.length > index) {
+        var img = new Image();
+        img.onload = function() {
+            console.log(arrayOfImages[index] + " loaded successfully");
+            preload(arrayOfImages, index + 1);
+        };
+        img.src = arrayOfImages[index];
+    } else {
+        $("#pre1").addClass("fade-in");
+        $("#pre1").addClass("one");
+
+        $("#pre2").addClass("fade-in");
+        $("#pre2").addClass("two");
+
+        $("#pre3").addClass("fade-in");
+        $("#pre3").addClass("three");
+
+        $("#pre4").addClass("fade-in");
+        $("#pre4").addClass("four");
+
+        $("#pre5").addClass("fade-in");
+        $("#pre5").addClass("four");
+
+        $("#pre6").addClass("fade-in");
+        $("#pre6").addClass("six");
+
+        $("#pre7").addClass("fade-in");
+        $("#pre7").addClass("seven");
+
+        $("#pre8").addClass("fade-in");
+        $("#pre8").addClass("eight");
+    }
+}
+    $( document ).ready(function() {
+    
+
+        var images = ["assets/img/home/1.jpg", "assets/img/home/2.jpg", "assets/img/home/3.jpg", "assets/img/home/4.jpg", "assets/img/home/5.jpg", "assets/img/home/6.jpg", "assets/img/home/7.jpg", "assets/img/home/8.jpg"];
+        
+        preload(images);
+        
+
+
+        
+    });
+
+    {% endblock kms_body_custom_js %}
+    
+    </script>
+    
+</body>
+
+</html>
