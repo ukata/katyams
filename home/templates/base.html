@@ -27,7 +27,46 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
 
+body {
+  font-family: 'Courier New', sans-serif;
+}
+
+.logo-text {
+background-color: #ff3333;
+};
+
+a:visited.logo-text {
+color: #000;
+}
+
+a.logo-text {
+color: #000;
+}
+
+a:hover.menu {
+color: #000;
+text-decoration: underline;
+}
+
+a:visited.menu {
+color: #000;
+text-decoration: underline;
+}
+
+a.menu {
+color: #000;
+text-decoration: underline;
+}
+
+a:hover.menu {
+color: #000;
+text-decoration: underline;
+}
+
+
+</style>
 {% block kms_head_custom_css %}
 {% endblock kms_head_custom_css %}
 
@@ -40,7 +79,9 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">ukata.me</h1>
+                <h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
+                                <p><a href="/about/" class="menu">about</a></p>
+                                <p><a href="/contact/" class="menu">contact</a></p>
             </div>
         </div>
 {% block kms_body %}       
