@@ -108,3 +108,5 @@ PROJECT_APPS = ['bootstrap3','home'
                 ]
 
 INSTALLED_APPS = DJANGO_INSTALLED_APPS + PROJECT_APPS
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MANAGERS = (('Katia', 'katia@ukata.me'), )

@@ -1,0 +1,90 @@
+{% extends "base.html" %}{% load staticfiles %}{% load bootstrap3 %}
+{% block kms_head_custom_css %}
+<style>
+a:hover {
+color: #000;
+text-decoration: underline;
+}
+
+a:visited {
+color: #000;
+text-decoration: underline;
+}
+
+a {
+color: #000;
+<!--text-decoration: underline;-->
+}
+
+a:hover {
+color: #000;
+text-decoration: underline;
+}
+
+a {
+color: #000;
+}
+
+input, textarea, input.form_control {
+  font-size: 20px;
+
+  border  : none;
+  padding : 0 10px;
+  margin  : 0;
+  width   : 240px;
+
+  background: none;
+  border-bottom: 1px dashed #B14943;
+}
+
+#id_name, #id_email, #id_body  {
+  font-size: 20px;
+
+  border  : none;
+  padding : 0 10px;
+  margin  : 0;
+  
+  background: none;
+  border-bottom: 1px dashed #B14943;
+}
+
+#id_body  {
+  font-size: 20px;
+
+  border  : none;
+  padding : 0 10px;
+  margin  : 0;
+
+  background: none;
+  border-bottom: 1px dashed #B14943;
+}
+</style>
+
+{% endblock kms_head_custom_css %}
+{% block kms_body %}       
+        <div class="row">
+                    <div class="col-lg-6">
+<h2>Katia Kru</h2>
+                <p><a href="mailto:katia@ukata.me">katia@ukata.me</a></p>
+                <p><a href="https://www.linkedin.com/pub/katia-kru/104/273/b12">https://www.linkedin.com/pub/katia-kru/104/273/b12</a></p>
+                <p><a href="https://github.com/ukata">https://github.com/ukata</a></p>
+            </div>
+                    <div class="col-lg-6">
+            
+<form action="/contact/" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Submit
+        </button>
+    {% endbuttons %}
+</form>
+            </div>
+
+
+
+        </div>
+
+{% endblock kms_body %}
+      
