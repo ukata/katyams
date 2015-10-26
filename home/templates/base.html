@@ -65,7 +65,10 @@ color: #000;
 text-decoration: underline;
 }
 
-
+@media (min-width: 540px) {
+  div#header_row {
+margin-top:50px;  }
+}
 </style>
 {% block kms_head_custom_css %}
 {% endblock kms_head_custom_css %}
@@ -77,20 +80,26 @@ text-decoration: underline;
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
-            <div class="col-lg-12">
+        <div id="header_row" class="row" style="    ">
+            <div class="col-lg-6">
                 <h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
-                                <p><a href="/about/" class="menu">about</a></p>
-                                <p><a href="/contact/" class="menu">contact</a></p>
+                                <!--<p><a href="/about/" class="menu">about</a></p>-->
+                                <!--<p><a href="/contact/" class="menu">contact</a></p>-->
+            </div>
+            <div class="col-lg-6">
+<p>&nbsp;</p>
+                                <p><a href="/about/" class="menu">about</a> - 
+                                <a href="/projects/" class="menu">projects</a> - 
+                                <a href="/contact/" class="menu">contact</a>
+                                </p>
             </div>
         </div>
 {% block kms_body %}       
 {% endblock kms_body %}
-        <hr>
 
         <!-- Footer -->
         <footer>
-            <div class="row">
+            <div class="row" style="margin-top:50px">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Katia 2015</p>
                 </div>
