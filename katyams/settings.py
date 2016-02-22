@@ -1,3 +1,4 @@
+
 """
 Django settings for katyams project.
 
@@ -12,12 +13,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklistSTAT
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'CHANGEME_CHANGEME_CHANGEME_CHANGEME_CHANGEME_CHANGEME'
@@ -30,16 +32,37 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+SITE_ID = 1
+
 DJANGO_INSTALLED_APPS = [
+    'cms',  # django CMS itself
+    'mptt',  # utilities for implementing a tree
+    'menus',  # helper for model independent hierarchical website navigation
+    'sekizai',  # for javascript and css management
+    'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
+    'treebeard',
+    'filer',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    
+    'djangocms_file',
+    'aldryn_bootstrap3',
+    'djangocms_picture',
+    'djangocms_teaser',
+    'djangocms_text_ckeditor',
+    'easy_thumbnails'
+    
 ]
 
 MIDDLEWARE_CLASSES = (
+    'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -48,6 +71,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',    
 )
 
 ROOT_URLCONF = 'katyams.urls'
@@ -63,6 +91,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
             ],
         },
     },
@@ -85,6 +115,10 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
+LANGUAGES = [
+    ('en-us', _('English')),
+    
+]
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -110,3 +144,25 @@ PROJECT_APPS = ['bootstrap3','home'
 INSTALLED_APPS = DJANGO_INSTALLED_APPS + PROJECT_APPS
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MANAGERS = (('Katia', 'katia@ukata.me'), )
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+CMS_TEMPLATES = (
+    ('base.html', _('Base')),
+    #('2col.html', _('2 Column')),
+    #('3col.html', _('3 Column')),
+    #('extra.html', _('Some extra fancy template')),
+)
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)

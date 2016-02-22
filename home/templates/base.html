@@ -1,5 +1,4 @@
-{% load bootstrap3 %}
-{# Load CSS and JavaScript #}
+{% load cms_tags sekizai_tags  bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery=1 %}
 <!DOCTYPE html>
@@ -13,8 +12,8 @@
     <meta name="description" content="">
     <meta name="author" content="Katia">
 
-    <title>ukata.me</title>
-
+      <title>{% page_attribute "page_title" %}</title>
+            {% render_block "css" %}
     <!-- Bootstrap Core CSS -->
     <!--<link href="assets/css/bootstrap.min.css" rel="stylesheet">-->
 
@@ -76,6 +75,8 @@ margin-top:50px;  }
 </head>
 
 <body class="">
+      {% cms_toolbar %}
+
 
     <!-- Page Content -->
     <div class="container">
@@ -87,16 +88,22 @@ margin-top:50px;  }
                                 <!--<p><a href="/contact/" class="menu">contact</a></p>-->
             </div>
             <div class="col-lg-6">
-<p>&nbsp;</p>
-                                <p><a href="/about/" class="menu">about</a> - 
-                                <a href="/projects/" class="menu">projects</a> - 
-                                <a href="/contact/" class="menu">contact</a>
-                                </p>
+<!--<p>&nbsp;</p>-->
+                                <!--<p><a href="/about/" class="menu">about</a> - -->
+                                <!--<a href="/projects/" class="menu">projects</a> - -->
+                                <!--<a href="/contact/" class="menu">contact</a>-->
+                                <!--</p>-->
             </div>
         </div>
 {% block kms_body %}       
 {% endblock kms_body %}
-
+      <div class="row">
+      <div class="col-lg-12">
+      {% placeholder base_content %}
+      {% block base_content %}{% endblock %}
+      </div>
+      </div>
+      {% render_block "js" %}
         <!-- Footer -->
         <footer>
             <div class="row" style="margin-top:50px">
