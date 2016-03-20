@@ -13,3 +13,5 @@ script: "coverage run --source='.' manage.py test"
 #  - codecov
 #addons:
 #  sauce_connect: true
+notifications:
+  hipchat: 9ea003812703170d9ef6fb2ce659f3@veggiesailor
