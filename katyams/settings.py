@@ -42,7 +42,6 @@ DJANGO_INSTALLED_APPS = [
     'djangocms_admin_style',  # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
     'treebeard',
     'filer',
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,15 +49,13 @@ DJANGO_INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
     'djangocms_file',
     'aldryn_bootstrap3',
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_text_ckeditor',
     'easy_thumbnails'
-    
+
 ]
 
 MIDDLEWARE_CLASSES = (
