@@ -26,7 +26,20 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <style>
+ul.nav li a, ul.nav li a:visited {
+    color: #000 !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: #000 !important;
+}
+
+ul.nav li.active a {
+    color: #000 !important;
+}
+
 
 body {
   font-family: 'Courier New', sans-serif;
@@ -34,6 +47,8 @@ body {
 
 .logo-text {
 background-color: #ff3333;
+margin-left: -15px;
+
 };
 
 a:visited.logo-text {
@@ -65,7 +80,7 @@ text-decoration: underline;
 }
 
 @media (min-width: 540px) {
-  div#header_row {
+  nav#header_row {
 margin-top:50px;  }
 }
 </style>
@@ -81,9 +96,23 @@ margin-top:50px;  }
     <!-- Page Content -->
     <div class="container">
 
-        <div id="header_row" class="row" style="    ">
+<nav class="" id="header_row">
+  <div class="container-fluid">
+    <div class="navbar-left">
+        <h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
+    </div>
+        <ul class="nav navbar-right">
+        
+        <li><h4><a href="/contact">contact</a></h4></li>
+        </ul>
+    <!--</div>-->
+  </div>
+</nav>
+
+
+        <div id="header_row2" class="row" style="    ">
             <div class="col-lg-6">
-                <h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
+                <!--<h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>-->
                                 <!--<p><a href="/about/" class="menu">about</a></p>-->
                                 <!--<p><a href="/contact/" class="menu">contact</a></p>-->
             </div>
@@ -174,7 +203,23 @@ margin-top:50px;  }
     {% endblock kms_body_custom_js %}
     
     </script>
-    
+    <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ukata.me"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//s.glam.pl/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 10]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//s.glam.pl/piwik.php?idsite=10" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
 </body>
 
 </html>
