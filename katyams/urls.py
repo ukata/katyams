@@ -18,13 +18,14 @@ from django.contrib import admin
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import *  # NOQA
+from django.conf.urls import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 import home.views
 from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
-    
+
     #url(r'^$', home.views.index),
     #url(r'^contact/$', home.views.contact),
     url(r'^contact/', include('contact_form.urls')),
@@ -34,11 +35,11 @@ urlpatterns = [
     url(r'^', include('cms.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns = patterns('',
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',  # NOQA
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ) + staticfiles_urlpatterns() + urlpatterns  # NOQA
+        ) + staticfiles_urlpatterns() + urlpatterns
+
