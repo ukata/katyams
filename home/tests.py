@@ -46,3 +46,9 @@ class ContactPageTest(TestCase):
         """
         response = self.client.get('/contact/')
         self.assertContains(response, "Katia Zawadzka")
+        
+    def test_piwik(self):
+        """Test the contact page wpik link.
+        """
+        response = self.client.get('/contact/')
+        self.assertContains(response, "piwik")    
