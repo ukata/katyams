@@ -24,3 +24,5 @@ Pillow==3.1.1
 six==1.10.0
 Unidecode==0.4.19
 wheel==0.24.0
+djangocms-page-meta==0.5.11
+

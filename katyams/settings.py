@@ -54,7 +54,10 @@ DJANGO_INSTALLED_APPS = [
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_text_ckeditor',
-    'easy_thumbnails'
+    'easy_thumbnails',
+    'meta',
+    'meta_mixin',
+    'djangocms_page_meta',
 
 ]
 
@@ -163,3 +166,14 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+META_SITE_PROTOCOL = 'https'
+META_SITE_DOMAIN = 'ukata.me'
+META_SITE_TYPE ='page'
+META_SITE_NAME = "Katia Zawadzki / Ukata"
+META_IMAGE_URL = 'https://ukata.me/static/'
+META_DEFAULT_IMAGE = 'https://ukata.me/static/assets/img/home/1.jpg'
+
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_GOOGLEPLUS_PROPERTIES = True

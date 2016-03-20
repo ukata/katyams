@@ -1,4 +1,6 @@
 {% load cms_tags sekizai_tags  bootstrap3 %}
+{% load page_meta_tags %}
+{% page_meta request.current_page as meta %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery=1 %}
 <!DOCTYPE html>
@@ -9,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Katia">
+    {% include 'djangocms_page_meta/meta.html' with meta=meta %}   
       <title>{% page_attribute "page_title" %}</title>
             {% render_block "css" %}
     <!-- Bootstrap Core CSS -->
