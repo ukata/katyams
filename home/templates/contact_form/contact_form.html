@@ -64,10 +64,10 @@ input, textarea, input.form_control {
 {% block kms_body %}       
         <div class="row">
                     <div class="col-lg-6">
-<h2>Katia Kru</h2>
-                <p><a href="mailto:katia@ukata.me">katia@ukata.me</a></p>
-                <p><a href="https://www.linkedin.com/pub/katia-kru/104/273/b12">https://www.linkedin.com/pub/katia-kru/104/273/b12</a></p>
-                <p><a href="https://github.com/ukata">https://github.com/ukata</a></p>
+<h2>Katia Zawadzka</h2>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:katia@ukata.me">katia@ukata.me</a></p>
+                <p><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/pub/katia-kru/104/273/b12">https://www.linkedin.com/pub/katia-kru/104/273/b12</a></p>
+                <p><i class="fa fa-github-alt"></i> <a href="https://github.com/ukata">https://github.com/ukata</a></p>
             </div>
                     <div class="col-lg-6">
             
@@ -76,7 +76,7 @@ input, textarea, input.form_control {
     {% bootstrap_form form %}
     {% buttons %}
         <button type="submit" class="btn btn-primary">
-            {% bootstrap_icon "star" %} Submit
+            {% bootstrap_icon "envelope" %} Send message
         </button>
     {% endbuttons %}
 </form>
