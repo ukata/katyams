@@ -3,7 +3,8 @@ python:
   - "3.4"
 #  - pip install codecov
 # command to install dependencies
-install: "ls;pip install -r requirements/base.txt; pip install -r requirements/cms.txt; pip install coveralls; pip install coverage"
+install: "ls;pip install -r requirements/base.txt; pip install -r requirements/cms.txt"
+#install: "ls;pip install -r requirements/base.txt; pip install -r requirements/cms.txt; pip install coveralls; pip install coverage"
 script: "coverage run --source='.' manage.py test"
 #after_success:
 #  - coveralls
