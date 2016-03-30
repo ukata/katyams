@@ -118,40 +118,23 @@ margin-top:50px;  }
 </head>
 
 <body class="">
-      {% cms_toolbar %}
-
-
-    <!-- Page Content -->
-    <div class="container">
-
+{% cms_toolbar %}
+<!-- Page Content -->
+<div class="container">
     <nav class="" id="header_row">
       <div class="container-fluid">
         <div class="navbar-left">
-            
-                        <img class="logo-gfx img-responsive" src="{% static "assets/img/home/logo-ukata.png" %}"/>
-    
+          <a href="/"><img class="logo-gfx img-responsive" src="{% static "assets/img/home/logo-ukata.png" %}"/></a>
         </div>
-            <ul class="nav navbar-nav navbar-right">
-            <li><a href="/contact"><b>ABOUT</b></a></li>
-            <li><a href="/contact"><b>CONTACT</b></a></li>
-            </ul>
-        <!--</div>-->
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="/contact"><b>ABOUT</b></a></li>
+        <li><a href="/contact"><b>CONTACT</b></a></li>
+        </ul>
       </div>
     </nav>
+    <div id="header_row2" class="row" style="    ">
+    <div class="col-lg-6">
 
-
-        <div id="header_row2" class="row" style="    ">
-            <div class="col-lg-6">
-                <!--<h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>-->
-                                <!--<p><a href="/about/" class="menu">about</a></p>-->
-                                <!--<p><a href="/contact/" class="menu">contact</a></p>-->
-            </div>
-            <div class="col-lg-6">
-<!--<p>&nbsp;</p>-->
-                                <!--<p><a href="/about/" class="menu">about</a> - -->
-                                <!--<a href="/projects/" class="menu">projects</a> - -->
-                                <!--<a href="/contact/" class="menu">contact</a>-->
-                                <!--</p>-->
             </div>
         </div>
 {% block kms_body %}       
