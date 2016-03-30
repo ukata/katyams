@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags  bootstrap3 %}
+{% load cms_tags sekizai_tags  bootstrap3 static %}
 {% load page_meta_tags %}
 {% page_meta request.current_page as meta %}
 {% bootstrap_css %}
@@ -45,8 +45,7 @@ body {
   font-family: 'Courier New', sans-serif;
 }
 
-.logo-text {
-background-color: #ff3333;
+.logo-gfx {
 margin-left: -25px;
 
 };
@@ -55,13 +54,17 @@ a:visited.logo-text {
 color: #000;
 }
 
-a.logo-text {
+a {
 color: #000;
 }
 
 a:hover.menu {
 color: #000;
 text-decoration: underline;
+}
+
+a:hover {
+color: #f7594e;
 }
 
 a:visited.menu {
@@ -121,18 +124,20 @@ margin-top:50px;  }
     <!-- Page Content -->
     <div class="container">
 
-<nav class="" id="header_row">
-  <div class="container-fluid">
-    <div class="navbar-left">
-        <h1 class=""><a class="logo-text" href="/"><span >ukata.me</span></a></h1>
-    </div>
-        <ul class="nav navbar-right">
-        <li><h4><a href="/contact"><b>ABOUT</b></a></h4></li>
-        <li><h4><a href="/contact"><b>CONTACT</b></a></h4></li>
-        </ul>
-    <!--</div>-->
-  </div>
-</nav>
+    <nav class="" id="header_row">
+      <div class="container-fluid">
+        <div class="navbar-left">
+            
+                        <img class="logo-gfx img-responsive" src="{% static "assets/img/home/logo-ukata.png" %}"/>
+    
+        </div>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="/contact"><b>ABOUT</b></a></li>
+            <li><a href="/contact"><b>CONTACT</b></a></li>
+            </ul>
+        <!--</div>-->
+      </div>
+    </nav>
 
 
         <div id="header_row2" class="row" style="    ">
@@ -160,7 +165,15 @@ margin-top:50px;  }
       {% render_block "js" %}
         <!-- Footer -->
         <footer>
-            <div class="row" style="margin-top:50px">
+        <div class="row">
+        <div class="col-lg-12">
+         <center style="font-size:20px;color:black;"><a href="https://www.linkedin.com/pub/katia-kru/104/273/b12"><i class="fa fa-linkedin"></i></a>
+    <a href="https://github.com/ukata"><i class="fa fa-github-alt"></i></a></center>
+            </div>
+
+        </div>
+        
+            <div class="row" style="">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Katia Zawadzka 2016</p>
                 </div>
