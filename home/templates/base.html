@@ -1,7 +1,7 @@
 {% load cms_tags sekizai_tags  bootstrap3 static %}
 {% load page_meta_tags %}
 {% page_meta request.current_page as meta %}
-{% bootstrap_css %}
+<link href="{{ STATIC_URL }}/static/css/bootstrap.min.css" %}" rel="stylesheet">
 {% bootstrap_javascript jquery=1 %}
 <!DOCTYPE html>
 <html lang="en">
