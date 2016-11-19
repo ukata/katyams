@@ -1,6 +1,6 @@
 aldryn-bootstrap3==1.0.7
 coverage==4.0.1
-Django==1.8.5
+Django==1.8.15
 django-appconf==1.0.1
 django-bootstrap3==6.2.2
 django-classy-tags==0.7.1

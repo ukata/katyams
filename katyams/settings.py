@@ -177,3 +177,8 @@ META_DEFAULT_IMAGE = 'https://ukata.me/static/assets/img/home/1.jpg'
 META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_GOOGLEPLUS_PROPERTIES = True
+try:
+    from secret_settings import *
+except ImportError:
+    pass 
+

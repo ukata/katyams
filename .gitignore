@@ -4,3 +4,4 @@ __pycache__
 *.wpr
 *.wpu
 media/
+katyams/secret_settings.py
