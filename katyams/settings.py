@@ -150,6 +150,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 CMS_TEMPLATES = (
     ('base.html', _('Base')),
     ('v2/base.html', _('Base v2.0')),
+    ('v2/homepage.html', _('Homepage v2.0')),
 
     #('2col.html', _('2 Column')),
     #('3col.html', _('3 Column')),
