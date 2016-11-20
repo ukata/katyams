@@ -1,11 +1,10 @@
 {% load cms_tags sekizai_tags  bootstrap3 static %}
 {% load page_meta_tags %}
 {% page_meta request.current_page as meta %}
+{% bootstrap_javascript jquery=1 %}
 <link href="{{ STATIC_URL }}/static/css/bootstrap.min.css" %}" rel="stylesheet">
 
-{% load static %}<!DOCTYPE html>
-{% bootstrap_javascript jquery=1 %}
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -29,7 +28,7 @@
     <link href="{% static "vendor/magnific-popup/magnific-popup.css" %}" rel="stylesheet">
 
     <!-- Theme CSS -->
-    {% comment %}<link href="{% static "css/creative.css" %}" rel="stylesheet">{% endcomment %}
+    <link href="{% static "css/creative.css" %}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -283,20 +282,21 @@
             </div>
         </div>
     </section>
+      {% render_block "js" %}
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="{% static "vendor/scrollreveal/scrollreveal.min.js" %}"></script>
+    <script src="{% static "vendor/magnific-popup/jquery.magnific-popup.min.js" %}"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
+    <script src="{% static "js/creative.min.js" %}"></script>
 
 </body>
 
