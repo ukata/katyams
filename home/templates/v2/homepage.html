@@ -1,4 +1,11 @@
+{% load cms_tags sekizai_tags  bootstrap3 static %}
+{% load page_meta_tags %}
+{% page_meta request.current_page as meta %}
+<link href="{{ STATIC_URL }}/static/css/bootstrap.min.css" %}" rel="stylesheet">
+
 {% load static %}<!DOCTYPE html>
+{% bootstrap_javascript jquery=1 %}
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,11 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Katia Zawadzka">
-
+    {% include 'djangocms_page_meta/meta.html' with meta=meta %}   
+      <title>{% page_attribute "page_title" %}</title>
+            {% render_block "css" %}
     <title>ukata me - design and illustration</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
@@ -21,7 +29,7 @@
     <link href="{% static "vendor/magnific-popup/magnific-popup.css" %}" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="{% static "css/creative.css" %}" rel="stylesheet">
+    {% comment %}<link href="{% static "css/creative.css" %}" rel="stylesheet">{% endcomment %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,8 +39,10 @@
     <![endif]-->
 
 </head>
-
+{% block kms_head_custom_css %}
+{% endblock kms_head_custom_css %}
 <body id="page-top">
+{% cms_toolbar %}
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
