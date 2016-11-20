@@ -149,6 +149,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CMS_TEMPLATES = (
     ('base.html', _('Base')),
+    ('v2/base.html', _('Base v2.0')),
+
     #('2col.html', _('2 Column')),
     #('3col.html', _('3 Column')),
     #('extra.html', _('Some extra fancy template')),
@@ -177,3 +179,8 @@ META_DEFAULT_IMAGE = 'https://ukata.me/static/assets/img/home/1.jpg'
 META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_GOOGLEPLUS_PROPERTIES = True
+try:
+    from secret_settings import *
+except ImportError:
+    pass 
+
