@@ -75,10 +75,10 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Design and illustration</h1>
+                <h1 id="homeHeading">{% page_attribute "page_title" %}</h1>
                 <hr>
-                <p>Start breathing full chest</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>{% page_attribute "meta_description" %}</p>
+                {% comment %}<a href="#about" class="btn btn-primary btn-xl page-scroll"></a>{% endcomment %}
             </div>
         </div>
     </header>
